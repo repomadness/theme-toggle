@@ -1,0 +1,6 @@
+{
+    "$schema": "https://www.chromatic.com/config-file.schema.json",
+    "projectId": "Project:68571967524e8573a47c9a98",
+    "exitZeroOnChanges": true,
+    "onlyChanged": true
+  }
