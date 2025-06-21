@@ -18,7 +18,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "public/assets/theme-toggle.gif"
   ],
   "scripts": {
     "dev": "vite",
