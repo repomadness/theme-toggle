@@ -1,0 +1,6 @@
+html[data-theme="dark"] {
+    --color-bg: var(--color-gray);
+    --color-text: var(--color-white-gray);
+    --color-primary: var(--color-mint);
+    --color-secondary: var(--color-lilac);
+}

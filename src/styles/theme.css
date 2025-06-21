@@ -1,0 +1,89 @@
+/* 1. Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&display=swap');
+
+:root {
+  --font-body: 'Hind', sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+
+  --color-white: #ffffff;
+  --color-cream: #fff5f2;
+  --color-white-gray: #f4f4f4;
+  --color-slight-gray: #e4e4e4;
+  --color-light-gray: #B9B9B4;
+  --color-gray: #7A7B80;
+  --color-med-gray: #4C4C55;
+  --color-dark-gray: #383940;
+  --color-black: #000000;
+  --color-red: #ff0000;
+  --color-green: #00ac11;
+  --color-mint: #B6FBAB;
+  --color-lilac: #E2ABFB;
+  --color-peach: #F89980;
+
+  --color-bg: var(--color-white-gray);
+  --color-text: var(--color-dark-gray);
+  --color-primary: var(--color-peach);
+  --color-secondary: var(--color-lilac);
+
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app-container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  text-shadow: 2px 2px 0 var(--color-primary);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+}

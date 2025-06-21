@@ -1,12 +1,114 @@
-# React + Vite
+# repomadness theme toggle 🌗
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, framework-agnostic **custom theme toggle and theme provider** for React apps, powered by global CSS variables and the `data-theme` attribute for easy theming. Designed to isolate styling framework and app logic.
 
-Currently, two official plugins are available:
+![theme toggle demo](public/assets/theme-toggle.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## features
 
-## Expanding the ESLint configuration
+- easy plug-and-play in any React app
+- toggles between `light` and `dark` modes
+- global CSS variaables via `data-theme` on `document.documentElement`
+- shared theme state across components with no need for a global state manager
+- CSS framework agnostic - works with plain CSS or any styling solution
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## installation
+
+```bash
+npm install @repomadness/theme-toggle
+```
+
+Ensure you have `react` and `react-dom` installed as peer dependencies.
+
+---
+
+## usage
+
+This package contains:
+
+- `<ThemeProvider />` - wrapper to apply theme based on the `data-theme` attribute
+- `<ThemeToggle />` - toggle switch that controls the theme state globally
+- `useTheme()` - hook to programmatically access theme
+
+### `ThemeProvider`
+
+Wrap your app with the `ThemeProvider` to apply the `data-theme` attribute (`light` or `dark`) to the `<html>` tag and manage your CSS variable state globally.
+
+```tsx
+// main.tsx or App.tsx
+import { ThemeProvider } from "@repomadness/theme-toggle";
+
+<ThemeProvider>
+  <App />
+</ThemeProvider>;
+```
+
+### `ThemeToggle`
+
+Give your app consumers the ability to control the theme state by adding the `ThemeToggle` component anywhere in your app.
+
+```tsx
+// Settings.tsx
+import { ThemeToggle } from "@repomadness/theme-toggle";
+
+export default function Settings() {
+  return (
+    <div>
+      <h1>App settings</h1>
+      <ThemeToggle />
+    </div>
+  );
+}
+```
+
+### `useTheme()`
+
+You can use the `useTheme()` hook to programmatically access the theme.
+
+```tsx
+import { useTheme } from "@repomadness/theme-toggle";
+
+const { theme, toggleTheme } = useTheme();
+
+console.log(theme); // "light" or "dark"
+toggleTheme(); // manually switch theme
+```
+
+### style with CSS variables
+
+Use `[data-theme="light"]` and `[data-theme="dark"]` to define your themes.
+
+```css
+:root {
+  --color-bg: white;
+  --color-text: black;
+}
+
+[data-theme="dark"] {
+  --color-bg: black;
+  --color-text: white;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+```
+
+---
+
+## development
+
+To run locally:
+
+```bash
+npm install
+```
+
+To run Storybook dev:
+
+```bash
+npm run storybook
+```
