@@ -1,4 +1,4 @@
-import { userEvent, within } from 'storybook/test';
+import { userEvent, within, waitFor, expect } from 'storybook/test';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import CustomToggle from './CustomToggle';
@@ -19,5 +19,6 @@ export const DarkModeToggle: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement.ownerDocument.body);
     await userEvent.click(await canvas.findByRole('switch', { name: 'Dark Mode Toggle' }));
+    await waitFor(() => expect(canvas.queryByRole('switch', { name: 'Dark Mode Toggle' })).toBeChecked());
   }
 };
