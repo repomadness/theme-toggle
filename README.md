@@ -112,3 +112,12 @@ To run Storybook dev:
 ```bash
 npm run storybook
 ```
+
+Component and functional testing with Chromatic configured in `chromatic.config.json`. Tests can be ran locally via Visual Tests addon in Storybook.
+
+For now, manual publishing to `npm` through CLI:
+
+```bash
+npm version patch
+npm publish
+```
