@@ -2,7 +2,7 @@
 
 A lightweight, framework-agnostic **custom theme toggle and theme provider** for React apps, powered by global CSS variables and the `data-theme` attribute for easy theming. Designed to isolate styling framework and app logic.
 
-![theme toggle demo](public/assets/theme-toggle.gif)
+![theme toggle demo](https://raw.githubusercontent.com/repomadness/theme-toggle/main/public/assets/theme-toggle.gif)
 
 ## features
 
