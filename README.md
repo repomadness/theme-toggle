@@ -1,5 +1,7 @@
 # repomadness theme toggle 🌗
 
+![theme toggle component image](https://raw.githubusercontent.com/repomadness/theme-toggle/main/public/assets/theme-toggle.jpg)
+
 A lightweight, framework-agnostic **custom theme toggle and theme provider** for React apps, powered by global CSS variables and the `data-theme` attribute for easy theming. Designed to isolate styling framework and app logic.
 
 ![theme toggle demo](https://raw.githubusercontent.com/repomadness/theme-toggle/main/public/assets/theme-toggle.gif)
@@ -16,11 +18,15 @@ A lightweight, framework-agnostic **custom theme toggle and theme provider** for
 
 ## installation
 
+Peer dependencies:
+
+- `react`
+- `react-dom`
+- `motion`
+
 ```bash
 npm install @repomadness/theme-toggle
 ```
-
-Ensure you have `react` and `react-dom` installed as peer dependencies.
 
 ---
 
